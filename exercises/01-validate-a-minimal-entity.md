@@ -40,7 +40,7 @@ Validate a small Cohort entity and distinguish its schema from its data.
 1. Which part says that `name` **must** be present?
 2. Why is one value valid but not the other?
 
-> **In the real repository:** this is a simplified version of `schemas/entities/cohort/schema.json`.
+> **In the real repository:** this is a simplified version of [`schemas/entities/cohort/schema.json`](https://github.com/M-casado/fega-metadata-schema/blob/main/schemas/entities/cohort/schema.json).
 
 <details>
 <summary>Solution</summary>
