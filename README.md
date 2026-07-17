@@ -1,10 +1,10 @@
 # EGA v2 schema mini-workshop
 
-This short workshop introduces simplified EGA v2 entity schemas, JSON Schema validation, identifiers, JSON-LD, RDF, and framing. It is designed for you to do on your own, and it takes around 30 minutes.
+This short list of exercises introduces simplified EGA v2 entity schemas, JSON Schema validation, identifiers, JSON-LD, RDF, and framing. It is designed for you to do on your own, and it takes around 30 minutes.
 
 > To run the exercises you will need a Biovalidator server. See how to set it up [**here**](https://github.com/M-casado/fega-metadata-schema#setup).
 
-You don't need to run Biovalidator with local schemas. Just run the instance from M-casado's fork. Something like the following:
+You don't need to run Biovalidator with local schemas. Just run the instance from [M-casado's fork](https://github.com/M-casado/biovalidator). Something like the following:
 ```bash
 node "$(npm root -g)/biovalidator/src/biovalidator.js"
 # or, if you are in the Biovalidator repository
