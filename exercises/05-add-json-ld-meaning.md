@@ -12,30 +12,43 @@ Use a context to give JSON names shared meanings.
 {
   "@context": {
     "ega": "https://identifiers.org/ega:",
-    "schema": "https://schema.org/",
-    "name": "schema:name",
-    "Cohort": "https://example.org/fega/Cohort"
+    "schema": "http://schema.org/",
+    "name": "schema:name"
   },
-  "@id": "ega:EGAC00001000001",
-  "@type": "Cohort",
+  "@id": "ega:EGAH00001000001",
+  "@type": "ega:cohort",
   "name": "Rare disease cohort"
 }
 ```
 
-2. Select **Expanded** output.
-3. IN the part that you pasted in JSON-LD Input, remove the `name` line (the whole line) from `@context`, then take a look at the Expanded tab again.
+2. Select the **Expanded** tab. It should look like the following:
+![JSON-LD Playground example](../img/json-ld-playground-ex5.png)
+
+3. Replace the JSON-LD input with this version, which has no mapping for `name`. Then check the **Expanded** tab again.
+
+```json
+{
+  "@context": {
+    "ega": "https://identifiers.org/ega:",
+    "schema": "http://schema.org/"
+  },
+  "@id": "ega:EGAH00001000001",
+  "@type": "ega:cohort",
+  "name": "Rare disease cohort"
+}
+```
 
 ## Questions
 
 1. Which entries in the context are prefixes?
-2. What happens to `name` after its mapping is removed? How does that impact the readability of the data?
+2. What happens to `name` after its mapping is removed? How does that affect the meaning available to a machine?
 
-> **In the real repository:** Cohort has its own [`context.jsonld`](https://github.com/M-casado/fega-metadata-schema/blob/main/schemas/entities/cohort/context.jsonld), which builds on the [shared context](https://github.com/M-casado/fega-metadata-schema/blob/main/schemas/common/context.jsonld).
+> **In the real repository:** the [shared context maps `name`](https://github.com/M-casado/fega-metadata-schema/blob/f59d931f0db9eb4c6cc2e556d00dafcce14281f6/schemas/common/context.jsonld#L3-L5) and defines the [`ega` and `schema` prefixes](https://github.com/M-casado/fega-metadata-schema/blob/f59d931f0db9eb4c6cc2e556d00dafcce14281f6/schemas/common/context.jsonld#L69-L75).
 
 <details>
 <summary>Solution</summary>
 
-1. `ega` and `schema` are prefixes in `@context`, and they are replaced by their values when expanded: `name` becomes `schema:name`, which then becomes `https://schema.org/name`.
-2. Without its mapping, `name` has no absolute meaning and does not appear in the expanded output. If there is no expanded `name`, then a _machine_ reading the code cannot understand that `name` is not just a string, but it has the semantic meaning of `https://schema.org/name`.
+1. `ega` and `schema` are prefixes. JSON-LD replaces them with their full values during expansion.
+2. With the mapping, `name` expands to `http://schema.org/name`. Without the mapping, `name` has no absolute meaning and disappears from the expanded output. If there is no expanded `name`, then a _machine_ reading the code cannot understand that `name` is not just a string, but it has the semantic meaning of `https://schema.org/name`.
 
 </details>

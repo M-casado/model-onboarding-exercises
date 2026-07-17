@@ -5,9 +5,11 @@ This short workshop introduces simplified EGA v2 entity schemas, JSON Schema val
 > To run the exercises you will need a Biovalidator server. See how to set it up [**here**](https://github.com/M-casado/fega-metadata-schema#setup).
 
 You don't need to run Biovalidator with local schemas. Just run the instance from M-casado's fork. Something like the following:
-````
+```bash
 node "$(npm root -g)/biovalidator/src/biovalidator.js"
-````
+# or, if you are in the Biovalidator repository
+node src/biovalidator
+```
 
 ## Tools
 
@@ -30,8 +32,10 @@ The small schemas used in the exercises are simplified versions of the real sche
 | [5](exercises/05-add-json-ld-meaning.md) | Add JSON-LD meaning |
 | [6](exercises/06-expand-json-ld.md) | Expand JSON-LD |
 | [7](exercises/07-frame-json-ld.md) | Frame JSON-LD |
-| [8](exercises/08-compare-with-the-real-repository.md) | Compare with the real repository (optional) |
+| [8](exercises/08-load-a-real-cohort-example.md) | Load a real Cohort example |
 
 If you are running tight on time, prioritise Exercises 1-6. It is fine not to finish every exercise.
 
 In each exercise you have the solution at the bottom, but don't be cheeky: try to do it yourself first.
+
+Exercise 8 needs network access because Biovalidator fetches the current example and schema from GitHub.

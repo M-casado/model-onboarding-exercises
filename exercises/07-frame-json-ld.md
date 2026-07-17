@@ -12,73 +12,85 @@ Use a frame to select a Cohort and show its related Biomaterial underneath it.
 {
   "@context": {
     "ega": "https://identifiers.org/ega:",
-    "schema": "https://schema.org/",
-    "Cohort": "https://example.org/fega/Cohort",
-    "Biomaterial": "https://example.org/fega/Biomaterial",
+    "schema": "http://schema.org/",
+    "prov": "https://www.w3.org/ns/prov#",
     "name": "schema:name",
-    "member": {
-      "@id": "https://example.org/fega/member",
-      "@type": "@id"
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id",
+      "@container": "@set"
     }
   },
   "@graph": [
     {
-      "@id": "ega:EGAC00001000001",
-      "@type": "Cohort",
+      "@id": "ega:EGAH00001000001",
+      "@type": "ega:cohort",
       "name": "Rare disease cohort",
-      "member": "ega:EGAN00000000001"
+      "hadMember": ["ega:EGAN00000000001"]
     },
     {
       "@id": "ega:EGAN00000000001",
-      "@type": "Biomaterial",
+      "@type": "ega:biomaterial",
       "name": "Participant 1"
     }
   ]
 }
 ```
 
-2. Familiarise yourself with the ``@graph``, which has two nodes (one cohort and one biomaterial).
-3. Select **Framed** output. Paste this into the frame input (``JSON-LD Frame``).
+2. Familiarise yourself with `@graph`, which contains two nodes: one Cohort and one Biomaterial.
+3. Select the **Framed** tab. Paste this into the **JSON-LD Frame** input.
 
 ```json
 {
   "@context": {
     "ega": "https://identifiers.org/ega:",
-    "schema": "https://schema.org/",
-    "Cohort": "https://example.org/fega/Cohort",
-    "Biomaterial": "https://example.org/fega/Biomaterial",
+    "schema": "http://schema.org/",
+    "prov": "https://www.w3.org/ns/prov#",
     "name": "schema:name",
-    "member": {
-      "@id": "https://example.org/fega/member",
-      "@type": "@id"
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id",
+      "@container": "@set"
     }
   },
-  "@type": "Cohort",
+  "@type": "ega:cohort",
   "@explicit": true,
   "name": {},
-  "member": {
-    "@embed": "@always",
-    "@explicit": true,
-    "@type": "Biomaterial",
-    "name": {}
-  }
+  "hadMember": [
+    {
+      "@embed": "@always",
+      "@explicit": true,
+      "@type": "ega:biomaterial",
+      "name": {}
+    }
+  ]
 }
 ```
 
-4. See the framing. Now the JSON data is no longer a flat ``@graph``, but instead a "reconstructed" JSON-LD data representing the cohort. Furthermore, now the Cohort should contain the Biomaterial as a member.
-5. Change the frame's top-level `@type` from `Cohort` to `Biomaterial`, then frame again.
+4. Check the **Framed** tab. The flat graph is reconstructed around the Cohort, with the Biomaterial embedded under `hadMember`.
+5. In the **JSON-LD Frame** input, replace this line:
+
+```text
+"@type": "ega:cohort",
+```
+
+with this line, then frame again:
+
+```text
+"@type": "ega:biomaterial",
+```
 
 ## Questions
 
 1. What decides which resource appears at the top of the result?
 2. Does a successful frame prove that the data is valid against a JSON Schema?
 
-> **In the real repository:** Cohort has a [`frame.jsonld`](https://github.com/M-casado/fega-metadata-schema/blob/main/schemas/entities/cohort/frame.jsonld). The repository validates framed data again afterwards.
+> **In the real repository:** Cohort constrains [`hadMember`](https://github.com/M-casado/fega-metadata-schema/blob/f59d931f0db9eb4c6cc2e556d00dafcce14281f6/schemas/entities/cohort/schema.json#L60-L69), maps it to [`prov:hadMember`](https://github.com/M-casado/fega-metadata-schema/blob/f59d931f0db9eb4c6cc2e556d00dafcce14281f6/schemas/entities/cohort/context.jsonld#L21-L24), and includes it in the [Cohort frame](https://github.com/M-casado/fega-metadata-schema/blob/f59d931f0db9eb4c6cc2e556d00dafcce14281f6/schemas/entities/cohort/frame.jsonld#L27-L31).
 
 <details>
 <summary>Solution</summary>
 
 1. The frame's top-level `@type` selects the Cohort or Biomaterial.
-2. No. Framing arranges graph data; it does not validate it against a JSON Schema.
+2. No. Framing selects and arranges graph data. We need to validate it against a JSON Schema later if we want to assert compliance.
 
 </details>

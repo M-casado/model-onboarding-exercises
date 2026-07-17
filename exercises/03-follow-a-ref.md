@@ -13,14 +13,14 @@ Use a shared identifier rule through `$ref`.
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "id": { "$ref": "#/$defs/cohortIdentifier" }
+    "@id": { "$ref": "#/$defs/cohortIdentifier" }
   },
-  "required": ["id"],
+  "required": ["@id"],
   "additionalProperties": false,
   "$defs": {
     "cohortIdentifier": {
       "type": "string",
-      "pattern": "^ega:EGAC[0-9]{11}$"
+      "pattern": "^ega:EGAH[0-9]{11}$"
     }
   }
 }
@@ -30,29 +30,29 @@ Use a shared identifier rule through `$ref`.
 
 ```json
 {
-  "id": "ega:EGAC00001000001"
+  "@id": "ega:EGAH00001000001"
 }
 ```
 
-3. Now validate this data.
+3. Now paste and validate this data.
 
 ```json
 {
-  "id": "ega:EGAD00001000001"
+  "@id": "ega:EGAD00001000001"
 }
 ```
 
 ## Questions
 
 1. Which property uses the shared definition?
-2. Where is the rule that accepts `EGAC` but rejects `EGAD`?
+2. Where is the rule that accepts `EGAH` but rejects `EGAD`?
 
-> **In the real repository:** entity schemas use shared definitions from [`schemas/common/schema.json`](https://github.com/M-casado/fega-metadata-schema/blob/main/schemas/common/schema.json). This exercise uses `$defs` so everything can be pasted into Biovalidator at once.
+> **In the real repository:** [`egaStableIdentifierCohort`](https://github.com/M-casado/fega-metadata-schema/blob/f59d931f0db9eb4c6cc2e556d00dafcce14281f6/schemas/common/schema.json#L4061-L4074) defines the Cohort identifier pattern. This exercise uses `$defs` so everything can be pasted into Biovalidator at once.
 
 <details>
 <summary>Solution</summary>
 
-1. `id` uses the shared definition.
-2. The `id` property points to `#/$defs/cohortIdentifier`. Its `pattern` requires `ega:EGAC` followed by 11 digits.
+1. `@id` uses the shared definition ``cohortIdentifier``.
+2. `@id` points to `#/$defs/cohortIdentifier`. Its `pattern` requires `ega:EGAH` followed by 11 digits. `EGAD` identifies a Dataset, not a Cohort.
 
 </details>
