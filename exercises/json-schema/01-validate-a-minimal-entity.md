@@ -2,7 +2,7 @@
 
 ## Goal
 
-Validate a small Cohort-like object and distinguish a schema from its data.
+You will validate a small JSON object and tell the rules apart from the data.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 
 ## Instructions
 
-1. Paste this schema into the ``SCHEMA`` input:
+1. Paste these rules into the **SCHEMA** input:
 
 ```json
 {
@@ -24,7 +24,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 }
 ```
 
-2. Paste this data into the ``DATA`` input (a.k.a. document) and then click ``Validate``:
+2. Paste this data into the **DATA** input (the document to check), then click **Validate**:
 
 ```json
 {
@@ -34,7 +34,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 > It should look something like the following:
 ![Biovalidator exercise 1](../../img/biovalidator-ex1.png)
 
-3. Replace the ``DATA`` input with the following and validate again:
+3. Replace the **DATA** input with the following and validate it again:
 
 ```json
 {
@@ -44,8 +44,8 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 
 ## Questions
 
-1. Which part says that `name` must be present?
-2. Why is one value valid and the other invalid?
+1. Which line says that `name` is required?
+2. Why does the first document (i.e., **DATA**) pass and the second one fail?
 
 > **In the real repository:** this is a simplified teaching version of the [Cohort schema at the EGA Archive](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/cohort/schema.json).
 
@@ -57,6 +57,10 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 
 </details>
 
-## Concept in plain English
+## Concept summary
 
-JSON is a notation for data. A JSON Schema is a separate set of rules that says what shape and value types that data may have. A document can be valid JSON while still failing a schema.
+Think of JSON as a way to write data. A JSON Schema is a separate set of rules about that data.
+
+For example, it can say which fields you need and what type each value must have.
+
+Note that you can write a document correctly as JSON and still fail these rules.
