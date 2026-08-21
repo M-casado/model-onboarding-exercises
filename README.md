@@ -1,17 +1,23 @@
 # EGA v2 metadata onboarding materials
 
-These materials introduce the EGA v2 metadata model through JSON Schema, Biovalidator, graph bundles, JSON-LD, and a small optional SHACL exercise. The exercises are grouped by topic so you can follow the core route or jump to the concept you need.
+These materials introduce the EGA v2 metadata model one small step at a time. You will use JSON Schema, Biovalidator, graph bundles, JSON-LD, and SHACL.
+
+The exercises are grouped by topic. You can follow the suggested path or go straight to a topic you need.
 
 
 ## Setup
 
 > [!IMPORTANT]
-> To run the exercises you will need a Biovalidator server. See how to set it up [**here**](https://github.com/EGA-archive/fega-metadata-schema/tree/dev#setup).
+> To run the exercises you will need a Biovalidator server. See how to set it up [**here**](https://github.com/EGA-archive/fega-metadata-schema/tree/main#setup).
 
-You don't need to run Biovalidator with local schemas. Just run the instance, something like the following:
+You do not need to give Biovalidator a local copy of the schemas. If you installed it globally, copy this command to start the server:
 ```bash
 node "$(npm root -g)/biovalidator/src/biovalidator.js"
-# or, if you are in the Biovalidator repository
+```
+
+If you are already inside the Biovalidator repository, use this command instead:
+
+```bash
 node src/biovalidator
 ```
 
@@ -23,32 +29,41 @@ node src/biovalidator
 
 ## Suggested routes
 
-The core route takes approximately 60–90 minutes, depending on how much time you spend inspecting the real schemas:
-
 1. [JSON Schema](exercises/json-schema/README.md)
 2. [Biovalidator](exercises/biovalidator/README.md)
 3. [Graph validation](exercises/graph-validation/README.md)
 4. [JSON-LD](exercises/json-ld/README.md)
 
-The [optional extensions](exercises/json-schema/README.md#optional-extensions) cover standards reuse and versioned URLs. [SHACL](exercises/shacl/README.md) and [open-source navigation](exercises/open-source/README.md) are also optional.
+[SHACL](exercises/shacl/README.md) and [open-source navigation](exercises/open-source/README.md) are rather optional.
 
 If you are running tight on time, prioritise the core topics above. It is fine not to finish all exercises.
 
-Every exercise has its **solution** below the questions, followed by a short **concept** explanation. But don't be cheeky: try to do it yourself first.
+Every exercise has a **solution** below its questions, followed by a short **concept summary**. _Don't be cheeky: try to do it yourself first._
 
 ## Topic index
 
 | Topic | What it covers |
 | --- | --- |
-| [JSON Schema](exercises/json-schema/README.md) | Types, required properties, `$ref`, `$id`, openness, identifiers, standards, and release URLs |
-| [Biovalidator](exercises/biovalidator/README.md) | UI, `/health`, `/validate`, `/cache`, asynchronous validation, and OLS |
-| [Graph validation](exercises/graph-validation/README.md) | Validating graph items and applying modular bundle profiles |
-| [JSON-LD](exercises/json-ld/README.md) | Contexts, expansion, RDF triples, and framing |
-| [SHACL](exercises/shacl/README.md) | Optional RDF/SHACL validation against a HealthDCAT-AP shape set |
-| [Open-source navigation](exercises/open-source/README.md) | Finding primary sources and using network-enabled LLMs responsibly |
+| [JSON Schema](exercises/json-schema/README.md) | Data types, required fields, reusable rules, identifiers, and versions |
+| [Biovalidator](exercises/biovalidator/README.md) | The browser page, health check, validation API, saved work, and ontology terms |
+| [Graph validation](exercises/graph-validation/README.md) | Checking graph items and complete bundles |
+| [JSON-LD](exercises/json-ld/README.md) | Giving names shared meanings, expanding data, and showing linked data |
+| [SHACL](exercises/shacl/README.md) | Optional RDF checks with SHACL rules |
+| [Open-source navigation](exercises/open-source/README.md) | Finding and checking source material with an online language model |
 
 ## Concepts
 
-An **entity** is an independently represented unit such as a Cohort or Biomaterial. A **JSON Schema** describes which JSON values are allowed. A JSON-LD **context** gives JSON names shared meanings. A JSON-LD **frame** selects and arranges data from a graph. A **graph profile** adds requirements to a complete bundle of entities.
+As you work through the exercises, keep these ideas in mind:
 
-Please note that the schema repository is under active development.
+- An **entity** is one item, such as a _Cohort_ or _Biomaterial_.
+- A **JSON Schema** is a list of rules for allowed JSON data.
+- A JSON-LD **context** tells your computer what JSON names mean.
+- A JSON-LD **frame** picks and arranges data from a graph.
+- A **graph profile** adds extra rules for a complete bundle of entities.
+- A **URL** is a web address.
+- An **API** lets another program ask a service to do something.
+- A **cache** is saved work that can be reused.
+- An **ontology** is a shared list of concepts and links between them.
+- **RDF** is a way to write linked facts. **SHACL** is a set of rules for checking those facts.
+
+Please note that the [schema repository](https://github.com/EGA-archive/fega-metadata-schema) is under active development.
