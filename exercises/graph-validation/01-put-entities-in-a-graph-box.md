@@ -2,13 +2,11 @@
 
 ## Goal
 
-We will use the _box_ analogy to understand an ``ega:graph``. The graph is one named JSON-LD container, and
-its `@graph` array is a box that can hold different kinds of named EGA entity.
+We will use the _box_ analogy to understand an ``ega:graph``. The graph is one named JSON-LD container, and its `@graph` array is _a box_ that can hold different kinds of named EGA entity.
 
 ## Prerequisites
 
-Complete [JSON Schema Exercise 4](../json-schema/04-resolve-a-relative-ref.md),
-start Biovalidator.
+Start [Biovalidator](http://localhost:3020).
 
 ## Instructions
 
@@ -33,9 +31,9 @@ start Biovalidator.
 <details>
 <summary>Solution</summary>
 
-1. The graph is identified by the `@type` field with value `ega:graph` and its unique identifier (`@id`) `ega:EGAG00000000001`. Each item inside the graph is identified by its own `@type` field, which specifies the type of EGA entity it represents (e.g., `ega:DAC`, `ega:Dataset`, etc.), along their unique identifiers (denoted by each of their top-level `@id` fields).
-2. Technically there is a single object in the top-level of the **DATA**: the graph itself (ega:EGAG00000000001).
-3. The graph encompasses a single object, as there is only one item in its `@graph` array: the `ega:DAC` object with the identifier `ega:EGAC00000000001`.
+1. The graph is typed by the `@type` field with value `ega:graph` and its unique identifier (`@id`) `ega:EGAG00000000001`. Each item inside the ``@graph`` _box_ is identified by its own `@type` field, which specifies the type of EGA entity it represents (e.g., `ega:DAC`, `ega:Dataset`, etc.), along their unique identifiers (denoted by each of their top-level `@id` fields).
+2. Technically there is a single object in the top-level of the **DATA**: the graph itself (``ega:EGAG00000000001``).
+3. The graph encompasses a single object in this example, as there is only one item in its `@graph` array: the `ega:DAC` object with the identifier `ega:EGAC00000000001`.
 4. If the result of the validation is ``VALID``, it means that the whole graph itself is valid according to the schema. That includes all nodes inside its ``@graph``, which means that each item inside the graph (in this case, the `ega:DAC` object) is also valid according to its respective schema (i.e., the [DAC schema](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/DAC/schema.json)). In other words, both the container (the graph) and its contents (the individual entities) conform to the defined rules and constraints of their schemas.
 
 </details>
@@ -118,4 +116,4 @@ flowchart TB
     style ITEMS2 fill:#FFFFFF,stroke:#CBD5E1,stroke-width:1px,stroke-dasharray:4 3
 ```
 
-Each outlined graph is only a grouping container: it can hold whichever entities belong in that bundle. The combinations can differ, even repeating an entity type, because a graph does not prescribe a fixed layout. It simply groups items for validation, and in this scenario it is you who is making the groupings as you want.
+Each outlined graph is only a grouping container: it can hold whichever entities belong in that bundle. The combinations can differ, even repeating an entity type, because a graph does not prescribe a fixed layout. Whoever adds items to the ``@graph`` is, in effect, making a choice about which entities to group together. For example, EGA can use graphs to group all items that relate to a submission, and then validate it. In this scenario it is you who is making the groupings as you want.

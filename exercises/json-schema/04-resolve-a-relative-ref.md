@@ -10,18 +10,18 @@ Complete [Exercise 3](03-follow-an-internal-ref.md) and keep Biovalidator runnin
 
 ## Instructions
 
-1. Open the [Cohort schema](https://raw.githubusercontent.com/M-casado/fega-metadata-schema/main/schemas/entities/cohort/schema.json).
+1. Open the [Cohort schema](https://raw.githubusercontent.com/EGA-archive/fega-metadata-schema/main/schemas/entities/cohort/schema.json).
 2. Find (use **Ctrl+F**) its `$id`. This is the schema's own unique identifier, which _coincidentally_ is also a resolvable URL. Also find a relative reference like this:
 
    ```text
    ../../common/schema.json#/$defs/relationshipItemRestrictionCohort
    ```
 
-3. Work out the full **raw URL** for that reference. In essence, if you were Biovalidator, and you saw that reference inside the [Cohort schema](https://raw.githubusercontent.com/M-casado/fega-metadata-schema/main/schemas/entities/cohort/schema.json), where would you go to fetch the definition named `relationshipItemRestrictionCohort`?
+3. Work out the full **raw URL** for that reference. In essence, if you were Biovalidator, and you saw that reference inside the [Cohort schema](https://raw.githubusercontent.com/EGA-archive/fega-metadata-schema/main/schemas/entities/cohort/schema.json), where would you go to fetch the definition named `relationshipItemRestrictionCohort`?
 
    (_Hint_: start from the `$id` URL, go up two folders, then open `common/schema.json`.)
 
-4. In Biovalidator, choose **Fetch examples**, select `cohort-valid-minimal-study-defined.json`, and choose **Load example**. The example is also available [here](https://raw.githubusercontent.com/M-casado/fega-metadata-schema/main/schemas/entities/cohort/examples/valid/cohort-valid-minimal-study-defined.json).
+4. In Biovalidator, choose **Fetch examples**, select `cohort-valid-minimal-study-defined.json`, and choose **Load example**. The example is also available [here](https://raw.githubusercontent.com/EGA-archive/fega-metadata-schema/main/schemas/entities/cohort/examples/valid/cohort-valid-minimal-study-defined.json).
    
    Then validate it.
 
@@ -38,8 +38,8 @@ Complete [Exercise 3](03-follow-an-internal-ref.md) and keep Biovalidator runnin
 <summary>Solution</summary>
 
 1. The `$ref` points to the raw Cohort schema on GitHub. It keeps the request short and avoids pasting a large schema into the UI.
-2. Biovalidator fetches (i.e., downloads) the [Cohort schema](https://raw.githubusercontent.com/M-casado/fega-metadata-schema/main/schemas/entities/cohort/schema.json), follows its other references (e.g., `../../common/schema.json`), builds one validator from all those rules, and only then, with all the pieces compiled, checks if the data complies with the schema.
-3. The Cohort schema's absolute `$id` is the starting URL. From it, `../../common/schema.json` becomes `https://raw.githubusercontent.com/M-casado/fega-metadata-schema/main/schemas/common/schema.json`.
+2. Biovalidator fetches (i.e., downloads) the [Cohort schema](https://raw.githubusercontent.com/EGA-archive/fega-metadata-schema/main/schemas/entities/cohort/schema.json), follows its other references (e.g., `../../common/schema.json`), builds one validator from all those rules, and only then, with all the pieces compiled, checks if the data complies with the schema.
+3. The Cohort schema's absolute `$id` is the starting URL. From it, `../../common/schema.json` becomes `https://raw.githubusercontent.com/EGA-archive/fega-metadata-schema/main/schemas/common/schema.json`.
 4. Biovalidator downloads the schema once and saves it for a while, to avoid unnecessary downloads. A later check can use the saved copy, so the process is much faster.
 
 </details>

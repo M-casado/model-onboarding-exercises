@@ -15,7 +15,7 @@ Complete [Exercise 3](03-follow-an-internal-ref.md). Keep Biovalidator open at <
 
    ```json
    {
-     "$ref": "https://raw.githubusercontent.com/M-casado/fega-metadata-schema/main/schemas/common/schema.json#/$defs/label"
+     "$ref": "https://raw.githubusercontent.com/EGA-archive/fega-metadata-schema/main/schemas/common/schema.json#/$defs/label"
    }
    ```
 
@@ -40,7 +40,7 @@ Complete [Exercise 3](03-follow-an-internal-ref.md). Keep Biovalidator open at <
 3. How do we know that the schema is actually being applied from the source?
 4. What does this show about how small a target a `$ref` can identify?
 
-> **In the real repository:** see the [common schema](https://github.com/M-casado/fega-metadata-schema/blob/main/schemas/common/schema.json) and its [`label` definition](https://github.com/M-casado/fega-metadata-schema/blob/7f8feced9e9fef579281bbc99a182d0b1f00fe20/schemas/common/schema.json#L150-L196).
+> **In the real repository:** see the [common schema](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/common/schema.json) and its [`label` definition](https://github.com/EGA-archive/fega-metadata-schema/blob/7f8feced9e9fef579281bbc99a182d0b1f00fe20/schemas/common/schema.json#L150-L196).
 
 <details>
 <summary>Solution</summary>

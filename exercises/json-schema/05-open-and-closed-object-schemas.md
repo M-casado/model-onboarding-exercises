@@ -68,7 +68,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 2. What changes when `additionalProperties` is set to `false`? What happens to document B, which has an extra field `phenotypeExtension` and document C, which has a typo in the field name?
 3. What are the advantages and disadvantages of each approach (closed vs open)?
 
-> **In the real repository:** EGA v2 entity schemas such as [Cohort](https://github.com/M-casado/fega-metadata-schema/blob/main/schemas/entities/cohort/schema.json) generally do not set `additionalProperties` to `false`.
+> **In the real repository:** EGA v2 entity schemas such as [Cohort](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/cohort/schema.json) generally do not set `additionalProperties` to `false`.
 
 <details>
 <summary>Solution</summary>
