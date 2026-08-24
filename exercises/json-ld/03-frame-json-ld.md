@@ -6,7 +6,9 @@ You will use a frame to show one Cohort together with its related Biomaterial.
 
 ## Prerequisites
 
-Complete [Exercise 2](02-expand-json-ld.md) and open the [JSON-LD Playground](https://json-ld.org/playground/). This exercise will be easier to understand if you have finished the [``graph-validation``](../graph-validation/) exercises.
+- Complete [Exercise 2](02-expand-unique-record.md).
+- Open the [JSON-LD Playground](https://json-ld.org/playground/).
+- Optionally complete the [graph-validation exercises](../graph-validation/) first, which will make this exercise easier to understand.
 
 ## Instructions
 

@@ -6,7 +6,8 @@ You will reuse one identifier rule with an internal `$ref`.
 
 ## Prerequisites
 
-Start Biovalidator from the [workshop setup](../../README.md#setup) and open <http://localhost:3020>.
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -50,7 +51,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 2. Where does the rule say that `EGAH` is allowed but `EGAD` is not?
 3. What does the `#` at the start of `$ref` tell Biovalidator?
 
-> **In the real repository:** see the [Cohort identifier definition](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/common/schema.json#L4757-L4787). The exercise keeps the definition inline so it can be pasted as one document. Continue with [Exercise 4](04-resolve-a-relative-ref.md) for a reference to another file.
+> **In the real repository:** see the [Cohort identifier definition](https://github.com/EGA-archive/fega-metadata-schema/blob/4d8909ec67e8a1435aee13de93ac7b9a14d53cb1/schemas/common/schema.json#L4757-L4787). The exercise keeps the definition inline so it can be pasted as one document. Continue with [Exercise 4](04-resolve-a-relative-ref.md) for a reference to another file.
 
 <details>
 <summary>Solution</summary>

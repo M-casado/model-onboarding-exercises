@@ -10,8 +10,8 @@ It does not say which combination of entities makes a complete submission.
 
 ## Prerequisites
 
-Complete [Exercise 1](01-put-entities-in-a-graph-box.md). Leave Biovalidator
-running.
+- Complete [Exercise 1](01-put-entities-in-a-graph-box.md).
+- Keep Biovalidator running.
 
 ## Instructions
 

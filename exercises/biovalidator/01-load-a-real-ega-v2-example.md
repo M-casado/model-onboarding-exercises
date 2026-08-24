@@ -6,7 +6,8 @@ You will use the Biovalidator web page to load a current EGA v2 example and chec
 
 ## Prerequisites
 
-Start the Biovalidator server using the [workshop setup](../../README.md#setup), then open <http://localhost:3020>.
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -31,7 +32,7 @@ Start the Biovalidator server using the [workshop setup](../../README.md#setup),
 2. What does Biovalidator download and turn into a validator when you choose **Validate**?
 3. Why are subsequent validation attempts much faster than the first one?
 
-> **To see the full version:** open the [EGA v2 Cohort examples](https://github.com/EGA-archive/fega-metadata-schema/tree/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/cohort/examples/valid) and the [Cohort schema](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/cohort/schema.json).
+> **To see the full version:** open the [EGA v2 Cohort examples](https://github.com/EGA-archive/fega-metadata-schema/tree/main/schemas/entities/cohort/examples/valid) and the [Cohort schema](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/cohort/schema.json).
 
 <details>
 <summary>Solution</summary>

@@ -6,7 +6,8 @@ You will see that the same-looking identifier can be right for one field and wro
 
 ## Prerequisites
 
-Start Biovalidator from the [workshop setup](../../README.md#setup) and open <http://localhost:3020>.
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -55,7 +56,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 3. Why does the validation not fail if the `$id` in the schema is a made-up non-resolvable URL?
 4. In what scenario(s) would the `$id` _**need**_ to be resolvable for the validation to work?
 
-> **In the real repository:** see the [shared `externalIdentifier` definition](https://github.com/EGA-archive/fega-metadata-schema/blob/4d8909ec67e8a1435aee13de93ac7b9a14d53cb1/schemas/common/schema.json#L11-L39) and the shared [`egaStableIdentifierCohort`](https://github.com/EGA-archive/fega-metadata-schema/blob/4d8909ec67e8a1435aee13de93ac7b9a14d53cb1/schemas/common/schema.json#L4757-L4770) definition used to constraint the `@id` field for Cohort entities.
+> **In the real repository:** see the [shared `externalIdentifier` definition](https://github.com/EGA-archive/fega-metadata-schema/blob/4d8909ec67e8a1435aee13de93ac7b9a14d53cb1/schemas/common/schema.json#L11-L39) and the shared [`egaStableIdentifierCohort`](https://github.com/EGA-archive/fega-metadata-schema/blob/4d8909ec67e8a1435aee13de93ac7b9a14d53cb1/schemas/common/schema.json#L4757-L4770) definition used to constrain the `@id` field for Cohort entities.
 
 <details>
 <summary>Solution</summary>
@@ -76,4 +77,3 @@ A JSON Schema format or pattern determines which values a field accepts. Similar
 JSON Schema `$id` identifies the schema and supports reference resolution; JSON-LD `@id` identifies a data item. 
 
 A schema can validate locally without its `$id` being a resolvable URL. The schema `$id` must be resolvable when validation needs to fetch the schema or resolve references through the network.
-

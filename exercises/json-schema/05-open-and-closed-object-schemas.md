@@ -6,7 +6,8 @@ You will see why leaving out `additionalProperties: false` allows both useful ex
 
 ## Prerequisites
 
-Start Biovalidator from the [workshop setup](../../README.md#setup) and open <http://localhost:3020>.
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -73,8 +74,8 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 <details>
 <summary>Solution</summary>
 
-1. Object rules check the fields they list, but extra fields are allowed by default. The validator cannot know that `biologicaSlex` was meant to be `biologicalSex`, and thus it inadvertantly allows the typo, because for the validator, the wrong string is simply a complete different property.
-2. `additionalProperties: false` rejects both `biologicaSlex` and `phenotypeExtension` because the rules do not list them.
+1. Object rules check the fields they list, but extra fields are allowed by default. The validator cannot know that `biologicaSlex` was meant to be `biologicalSex`, and thus it inadvertently allows the typo, because for the validator, the wrong string is simply a completely different property.
+2. `additionalProperties: false` rejects `phenotypeExtension` because it is not listed. It also rejects document C because `biologicalSex` is required but missing and `biologicaSlex` is undeclared.
 3. The advantage of a closed object is that it catches typos and unknown fields. The disadvantage is that it does not allow extensions. An open object allows extensions, but it does not catch typos.
 
 </details>

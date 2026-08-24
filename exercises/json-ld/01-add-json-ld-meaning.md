@@ -6,7 +6,7 @@ You will use a context to give ordinary JSON names and short prefixes a shared m
 
 ## Prerequisites
 
-Finish the first four exercises from [``json-schema``](../json-schema/) to understand the structure of JSON Schemas.
+- Complete the first four [JSON Schema exercises](../json-schema/).
 
 ## Instructions
 
@@ -33,7 +33,7 @@ Finish the first four exercises from [``json-schema``](../json-schema/) to under
     {
       "@context": {
         "ega": "https://identifiers.org/ega:",
-        "schema": "http://schema.org/",
+        "schema": "http://schema.org/"
       },
       "@id": "ega:EGAH00001000001",
       "name": "Rare disease cohort"
@@ -55,7 +55,7 @@ Finish the first four exercises from [``json-schema``](../json-schema/) to under
 
 1. `ega` and `schema` are short prefixes. 
 
-    The JSON-LD playground understands that when you type them (e.g., ``ega:``), you are referring to the full URIs (e.g., ``https://identifiers.org/ega:``), so it expands them to full web identifiers along with the suffix. That makes ``schema:name`` be expanded to ``http://schema.org/name``, or ``ega:EGAH00001000001`` be expanded to ``https://identifiers.org/ega:EGAN00004248884``.
+    The JSON-LD playground understands that when you type them (e.g., ``ega:``), you are referring to the full URIs (e.g., ``https://identifiers.org/ega:``), so it expands them to full web identifiers along with the suffix. That makes ``schema:name`` be expanded to ``http://schema.org/name``, or ``ega:EGAH00001000001`` be expanded to ``https://identifiers.org/ega:EGAH00001000001``.
 
 2. Without the mapping, `name` has no full meaning. It becomes _just another string_, so the tool does not include it in the expanded result.
 
@@ -67,6 +67,6 @@ Finish the first four exercises from [``json-schema``](../json-schema/) to under
 
 You can think of a JSON-LD context as a **small translation dictionary**. It maps short JSON terms to shared web identifiers.
 
-Different tools can then understand the same data without every document spelling out long names. 
+Different tools can then understand the same data without every document spelling out long names.
 
-This way, property names stop being random strings without meaning for computers, and turn instead into uniquely identified concepts. For example, without context, ``name`` has the same meaning for a _computer_ than ``143Xyawd3``, but by adding context, we are giving a unique meaning to ``name`` that becomes interoperable.
+This way, property names stop being random strings without meaning for computers, and turn instead into uniquely identified concepts. For example, without context, ``name`` has the same meaning for a _computer_ as ``143Xyawd3``, but by adding context, we are giving a unique meaning to ``name`` that becomes interoperable.

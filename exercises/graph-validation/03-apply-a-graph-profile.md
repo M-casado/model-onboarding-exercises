@@ -8,7 +8,8 @@ In an EGA workflow, someone can add entities to a box and validate each one with
 
 ## Prerequisites
 
-Complete [Exercise 2](02-see-what-the-bare-graph-schema-checks.md). Leave Biovalidator running.
+- Complete [Exercise 2](02-see-what-the-bare-graph-schema-checks.md).
+- Keep Biovalidator running.
 
 ## Instructions
 
@@ -88,7 +89,7 @@ Complete [Exercise 2](02-see-what-the-bare-graph-schema-checks.md). Leave Bioval
 <summary>Solution</summary>
 
 1. The bare schema checks the items in the `@graph` array as individual entities. Additionally to that minimum promise, the profile also requires a node in the graph whose type is a biomaterial.
-2. A profile can be applied whenever a check is useful. At any point in time, one can validate the bundle of items in the graph with any profile. That can be at the beginning of a submission, half-way through, or at the end. Most commonly, these profiles would be used at the end of a metadata submission to assert that all the items in a submission, both individually and as a group, are complete and meets the requirements of a particular workflow.
+2. A profile can be applied whenever a check is useful. At any point in time, one can validate the bundle of items in the graph with any profile. That can be at the beginning of a submission, half-way through, or at the end. Most commonly, these profiles would be used at the end of a metadata submission to assert that all the items in a submission, both individually and as a group, are complete and meet the requirements of a particular workflow.
 3. `allOf` composes the reusable base graph rules and `has...` requirements. This way, the profile adds constraints without copying the entity definitions. This is extremely useful for EGA to easily make profiles, and for other stakeholders (e.g., an EGA submitter with particular submission requirements) to either reuse similar profiles or to build their own.
 
 </details>

@@ -6,7 +6,8 @@ You will use the public EGA v2 sources and an online language model as learning 
 
 ## Prerequisites
 
-You need GitHub access and some kind of Large Language Model (LLM) with internet access.
+- Have GitHub access.
+- Use an internet-enabled Large Language Model (LLM).
 
 ## Instructions
 

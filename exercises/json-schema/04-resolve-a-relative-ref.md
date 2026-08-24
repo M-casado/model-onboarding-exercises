@@ -6,7 +6,8 @@ You will see how a real EGA schema finds a rule in another file. Its `$id` tells
 
 ## Prerequisites
 
-Complete [Exercise 3](03-follow-an-internal-ref.md) and keep Biovalidator running. You need an internet connection to GitHub for this one.
+- Complete [Exercise 3](03-follow-an-internal-ref.md).
+- Keep Biovalidator running and ensure GitHub access.
 
 ## Instructions
 
@@ -32,7 +33,7 @@ Complete [Exercise 3](03-follow-an-internal-ref.md) and keep Biovalidator runnin
 3. Which field tells the validator what a relative path starts from?
 4. If you click **Validate** again, does Biovalidator download the schema again, or does it use a saved copy?
 
-> **To see the full version:** open the [Cohort schema](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/cohort/schema.json) and its [common schema](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/common/schema.json).
+> **To see the full version:** open the [Cohort schema](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/cohort/schema.json) and its [common schema](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/common/schema.json).
 
 <details>
 <summary>Solution</summary>

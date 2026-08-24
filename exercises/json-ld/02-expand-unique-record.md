@@ -6,7 +6,8 @@ You will read expanded JSON-LD and turn one value into a simple RDF statement. R
 
 ## Prerequisites
 
-Complete [Exercise 1](01-add-json-ld-meaning.md) and open the [JSON-LD Playground](https://json-ld.org/playground/).
+- Complete [Exercise 1](01-add-json-ld-meaning.md).
+- Open the [JSON-LD Playground](https://json-ld.org/playground/).
 
 ## Instructions
 
@@ -38,7 +39,7 @@ Complete [Exercise 1](01-add-json-ld-meaning.md) and open the [JSON-LD Playgroun
 1. Which full value identifies the sample record ``EGAN00004248884``?
 2. In the N-quads line, which part is the subject, which is the predicate, and which is the object?
 
-> **To see the full version:** open the [minimal Cohort example](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/cohort/examples/valid/cohort-valid-minimal-study-defined.json).
+> **To see the full version:** open the [minimal Cohort example](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/cohort/examples/valid/cohort-valid-minimal-study-defined.json).
 
 <details>
 <summary>Solution</summary>

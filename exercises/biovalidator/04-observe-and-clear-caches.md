@@ -6,7 +6,8 @@ You will see how Biovalidator saves built validators, downloaded `$ref` files, a
 
 ## Prerequisites
 
-Start a local Biovalidator server using the [workshop setup](../../README.md#setup). The full exercise needs access to GitHub and OLS.
+- Start a fresh Biovalidator server using the [setup instructions](../../README.md#setup).
+- Ensure access to GitHub and OLS.
 
 ## Safety
 
@@ -36,22 +37,22 @@ Use `DELETE /cache` **only on a server you own** (i.e., one you have deployed yo
 
    Keep the tab open, to compare later on.
 
-5. Go back to [Biovalidator's UI](http://localhost:3020/), choose the example `biomaterial-valid-minimal-organism.json`, **Load example** and then **Validate**.
+7. Go back to [Biovalidator's UI](http://localhost:3020/), choose the example `biomaterial-valid-minimal-organism.json`, **Load example** and then **Validate**.
 
    Notice the time it takes for the validation to appear. If, after it is finished, you click on **Validate** again, it is much faster, is it not?
 
-6. Open the `/cache` endpoint again, and compare the content of `api.entries.ols` (search for ``ols`` with ``Ctrl+F``).
+8. Open the `/cache` endpoint again, and compare the content of `api.entries.ols` (search for ``ols`` with ``Ctrl+F``).
 
    Why are there OLS entries now? Why were there none after validating the DAC example?
 
-7. Similar to above, remove the cache, this time with the scope of API calls, instead of the schemas:
+9. Similar to above, remove the cache, this time with the scope of API calls, instead of the schemas:
 
    ```bash
    curl --fail --silent --show-error --request DELETE \
      'http://localhost:3020/cache?scope=api'
    ```
 
-8. See the `/cache` content again and notice how the schema entries remain, but the API data was erased.
+10. See the `/cache` content again and notice how the schema entries remain, but the API data was erased.
 
 ## Questions
 

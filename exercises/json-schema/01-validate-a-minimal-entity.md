@@ -6,7 +6,8 @@ You will validate a small JSON object and tell the rules apart from the data.
 
 ## Prerequisites
 
-Start Biovalidator from the [workshop setup](../../README.md#setup) and open <http://localhost:3020>.
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -47,7 +48,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 1. Which line says that `name` is required?
 2. Why does the first document (i.e., **DATA**) pass and the second one fail?
 
-> **In the real repository:** this is a simplified teaching version of the [Cohort schema at the EGA Archive](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/cohort/schema.json).
+> **In the real repository:** this is a simplified teaching version of the [Cohort schema at the EGA Archive](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/cohort/schema.json).
 
 <details>
 <summary>Solution</summary>

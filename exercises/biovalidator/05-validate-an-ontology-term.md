@@ -6,7 +6,8 @@ You will use Biovalidator's custom `graphRestriction` rule to check an ontology 
 
 ## Prerequisites
 
-Start a local Biovalidator server using the [workshop setup](../../README.md#setup). The server must be able to reach OLS4.
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Ensure the server can reach OLS4.
 
 ## Instructions
 
@@ -24,7 +25,6 @@ Start a local Biovalidator server using the [workshop setup](../../README.md#set
       "graphRestriction": {
         "ontologies": ["obo:efo"],
         "classes": ["PATO:0001894"],
-        "relations": ["rdfs:subClassOf"],
         "includeSelf": false
       }
     }
@@ -43,9 +43,9 @@ Start a local Biovalidator server using the [workshop setup](../../README.md#set
    {"term": "MONDO:0005148"}
    ```
 
-   The first is a child term of ``phenotypic sex`` (``PATO:0001894``), which is the parent that we defined in ``classes`` within the schema. The second term is not a direct descendant of that parent term, and thus validation fails.
+   The first is a child term of ``phenotypic sex`` (``PATO:0001894``), which is the parent that we defined in ``classes`` within the schema. The second term is not a descendant of that parent term, and thus validation fails.
 
-   _Note: _If OLS is unavailable, record a service failure. Just because the service could not answer does not mean that our term did not belong to the ontology hierarchy.
+   _Note:_ If OLS is unavailable, record a service failure. Just because the service could not answer does not mean that our term did not belong to the ontology hierarchy.
 
 3. Replace the **SCHEMA** content with the following:
     ```json
@@ -88,13 +88,12 @@ Start a local Biovalidator server using the [workshop setup](../../README.md#set
 3. Why is checking a hierarchy easier to maintain than a very long list of allowed terms?
 4. What outside service does this check need?
 
-> **In the real repository:** compare the [Biomaterial ontology restriction](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/biomaterial/schema.json#L285-L330) with Biovalidator's [`graphRestriction` documentation](https://github.com/EbiEga/biovalidator/blob/10dd3d688398813be2c2bcb57a779cea2c056a9b/README.md#graphrestriction) and the [OLS4 help/API documentation](https://www.ebi.ac.uk/ols4/help).
+> **In the real repository:** compare the [Biomaterial ontology restriction](https://github.com/EGA-archive/fega-metadata-schema/blob/4d8909ec67e8a1435aee13de93ac7b9a14d53cb1/schemas/entities/biomaterial/schema.json#L285-L330) with Biovalidator's [`graphRestriction` documentation](https://github.com/EbiEga/biovalidator/blob/31f66a593f048a1f70631358ac14c4aa77f2cd94/README.md#graphrestriction) and the [OLS4 help/API documentation](https://www.ebi.ac.uk/ols4/help).
 
 <details>
 <summary>Solution</summary>
 
 1. `classes` names the parent concept. `ontologies` chooses the ontology. `includeSelf: false` means that the parent itself is not accepted—only a child below it.
-   `relations` says which kind of “is a type of” link to follow.
 2. Biovalidator asks OLS a question while it is checking the data. `$async: true` tells the validator that it may need to wait for that answer.
 3. The ontology can gain new child terms without someone copying every term into a long list. The rule stays connected to the shared ontology. And therefore, we do not need to maintain an endless list of terms in controlled vocabularies within our model!
 4. The check needs OLS and the current contents of the ontology. If OLS is down, that is a service problem, not proof that the term is wrong.

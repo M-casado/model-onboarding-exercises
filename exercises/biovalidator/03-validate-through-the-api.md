@@ -8,7 +8,8 @@ We will use `curl` to send that request from your terminal, but you can use your
 
 ## Prerequisites
 
-Start the Biovalidator server using the [workshop setup](../../README.md#setup).
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -30,7 +31,7 @@ Start the Biovalidator server using the [workshop setup](../../README.md#setup).
       --write-out '\nHTTP status: %{http_code}\n'
     ```
 
-    Notice how the response is a simple ``[]`` (i.e., empty list), because the server's endpoing ``/validate`` did not find any errors. Whether the "request" was valid comes defined by the HTTP status code (e.g., ``200`` for a valid request) we print right after.
+    Notice how the response is a simple ``[]`` (i.e., empty list), because the server's endpoint ``/validate`` did not find any errors. Whether the "request" was valid is defined by the HTTP status code (e.g., ``200`` for a valid request) we print right after.
 
 2. Run this second request with an invalid number for `name`:
 
@@ -58,7 +59,7 @@ Start the Biovalidator server using the [workshop setup](../../README.md#setup).
 2. How is "the data is invalid" different from "the request itself is broken"?
 3. Why is the API useful when we have the [user-friendly UI](http://localhost:3020/) already?
 
-> **In the real repository:** see the [Biovalidator `/validate` API documentation](https://github.com/EbiEga/biovalidator/blob/10dd3d688398813be2c2bcb57a779cea2c056a9b/docs/api.md#validation).
+> **In the real repository:** see the [Biovalidator `/validate` API documentation](https://github.com/EbiEga/biovalidator/blob/31f66a593f048a1f70631358ac14c4aa77f2cd94/docs/api.md#validation).
 
 <details>
 <summary>Solution</summary>

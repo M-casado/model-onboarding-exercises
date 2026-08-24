@@ -2,11 +2,12 @@
 
 ## Goal
 
-We will use the _box_ analogy to understand an ``ega:graph``. The graph is one named JSON-LD container, and its `@graph` array is _a box_ that can hold different kinds of named EGA entity.
+We will use the _box_ analogy to understand an ``ega:graph``. The graph is one named JSON-LD container, and its `@graph` array is _a box_ that can hold different kinds of named EGA entities.
 
 ## Prerequisites
 
-Start [Biovalidator](http://localhost:3020).
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -31,7 +32,7 @@ Start [Biovalidator](http://localhost:3020).
 <details>
 <summary>Solution</summary>
 
-1. The graph is typed by the `@type` field with value `ega:graph` and its unique identifier (`@id`) `ega:EGAG00000000001`. Each item inside the ``@graph`` _box_ is identified by its own `@type` field, which specifies the type of EGA entity it represents (e.g., `ega:DAC`, `ega:Dataset`, etc.), along their unique identifiers (denoted by each of their top-level `@id` fields).
+1. The graph and each item inside the ``@graph`` _box_ are identified by their `@id` fields. The graph's `@type` value is `ega:graph`; each item's `@type` specifies the EGA entity class it represents (e.g., `ega:DAC` or `ega:Dataset`).
 2. Technically there is a single object in the top-level of the **DATA**: the graph itself (``ega:EGAG00000000001``).
 3. The graph encompasses a single object in this example, as there is only one item in its `@graph` array: the `ega:DAC` object with the identifier `ega:EGAC00000000001`.
 4. If the result of the validation is ``VALID``, it means that the whole graph itself is valid according to the schema. That includes all nodes inside its ``@graph``, which means that each item inside the graph (in this case, the `ega:DAC` object) is also valid according to its respective schema (i.e., the [DAC schema](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/DAC/schema.json)). In other words, both the container (the graph) and its contents (the individual entities) conform to the defined rules and constraints of their schemas.

@@ -6,7 +6,8 @@ You will see the difference between correctly written JSON and JSON that follows
 
 ## Prerequisites
 
-Start Biovalidator from the [workshop setup](../../README.md#setup) and open <http://localhost:3020>.
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 
@@ -49,7 +50,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 }
 ```
 
-3. After each (pressumably) failed attempt, fix it with:
+3. After each (presumably) failed attempt, fix it with:
 
 ```json
 {
@@ -63,7 +64,7 @@ Start Biovalidator from the [workshop setup](../../README.md#setup) and open <ht
 2. Which rule does each document break?
 3. Which rule rejects the extra `@id` in the third example? Do all EGA v2 schemas use that rule?
 
-> **In the real repository:** compare this teaching schema with the [current EGA Cohort schema](https://github.com/EGA-archive/fega-metadata-schema/blob/ad5ba2a7ebc2b42c6f4a5cf54aa697e6e8a1a713/schemas/entities/cohort/schema.json), which is intentionally open to undeclared properties.
+> **In the real repository:** compare this teaching schema with the [current EGA Cohort schema](https://github.com/EGA-archive/fega-metadata-schema/blob/main/schemas/entities/cohort/schema.json), which is intentionally open to undeclared properties.
 
 <details>
 <summary>Solution</summary>

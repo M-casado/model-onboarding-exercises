@@ -6,7 +6,8 @@ You will see how the EGA Cohort schema makes an EGA Cohort compatible with the B
 
 ## Prerequisites
 
-Complete [Exercise 4](04-resolve-a-relative-ref.md). Open [Biovalidator](http://localhost:3020/).
+- Complete [Exercise 4](04-resolve-a-relative-ref.md).
+- Open Biovalidator at <http://localhost:3020>.
 
 ## Instructions
 

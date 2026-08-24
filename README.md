@@ -25,16 +25,16 @@ node src/biovalidator
 
 - Biovalidator: [http://localhost:3020](http://localhost:3020)
 - JSON-LD Playground: <https://json-ld.org/playground/>
-- Real EGA v2 schema repository: <https://github.com/M-casado/fega-metadata-schema>
+- Real EGA v2 schema repository: <https://github.com/EGA-archive/fega-metadata-schema>
 
 ## Suggested routes
 
-1. [JSON Schema](exercises/json-schema/README.md)
-2. [Biovalidator](exercises/biovalidator/README.md)
-3. [Graph validation](exercises/graph-validation/README.md)
-4. [JSON-LD](exercises/json-ld/README.md)
+1. [JSON Schema](exercises/json-schema/)
+2. [Biovalidator](exercises/biovalidator/)
+3. [Graph validation](exercises/graph-validation/)
+4. [JSON-LD](exercises/json-ld/)
 
-[SHACL](exercises/shacl/README.md) and [open-source navigation](exercises/open-source/README.md) are rather optional.
+[SHACL](exercises/shacl/) and [open-source navigation](exercises/open-source/) are rather optional.
 
 If you are running tight on time, prioritise the core topics above. It is fine not to finish all exercises.
 
@@ -44,12 +44,12 @@ Every exercise has a **solution** below its questions, followed by a short **con
 
 | Topic | What it covers |
 | --- | --- |
-| [JSON Schema](exercises/json-schema/README.md) | Data types, required fields, reusable rules, identifiers, and versions |
-| [Biovalidator](exercises/biovalidator/README.md) | The browser page, health check, validation API, saved work, and ontology terms |
-| [Graph validation](exercises/graph-validation/README.md) | Checking graph items and complete bundles |
-| [JSON-LD](exercises/json-ld/README.md) | Giving names shared meanings, expanding data, and showing linked data |
-| [SHACL](exercises/shacl/README.md) | Optional RDF checks with SHACL rules |
-| [Open-source navigation](exercises/open-source/README.md) | Finding and checking source material with an online language model |
+| [JSON Schema](exercises/json-schema/) | Data types, required fields, reusable rules, identifiers, and versions |
+| [Biovalidator](exercises/biovalidator/) | The browser page, health check, validation API, saved work, and ontology terms |
+| [Graph validation](exercises/graph-validation/) | Checking graph items and complete bundles |
+| [JSON-LD](exercises/json-ld/) | Giving names shared meanings, expanding data, and showing linked data |
+| [SHACL](exercises/shacl/) | Optional RDF checks with SHACL rules |
+| [Open-source navigation](exercises/open-source/) | Finding and checking source material with an online language model |
 
 ## Concepts
 

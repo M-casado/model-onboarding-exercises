@@ -6,7 +6,8 @@ You will see the health information that this Biovalidator process reports about
 
 ## Prerequisites
 
-Start the Biovalidator server using the [workshop setup](../../README.md#setup).
+- Start Biovalidator using the [setup instructions](../../README.md#setup).
+- Open <http://localhost:3020>.
 
 ## Instructions
 

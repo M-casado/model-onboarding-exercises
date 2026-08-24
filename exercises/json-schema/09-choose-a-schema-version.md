@@ -6,7 +6,8 @@ You will choose a URL that matches the stability you need: a feature branch for 
 
 ## Prerequisites
 
-Complete [Exercise 4](04-resolve-a-relative-ref.md) and have a browser with internet access.
+- Complete [Exercise 4](04-resolve-a-relative-ref.md).
+- Have a browser with internet access.
 
 ## Instructions
 
