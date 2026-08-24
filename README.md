@@ -1,13 +1,23 @@
-# EGA v2 schema mini-workshop
+# EGA v2 metadata onboarding materials
 
-This short list of exercises introduces simplified EGA v2 entity schemas, JSON Schema validation, identifiers, JSON-LD, RDF, and framing. It is designed for you to do on your own, and it takes around 30 minutes.
+These materials introduce the EGA v2 metadata model one small step at a time. You will use JSON Schema, Biovalidator, graph bundles, JSON-LD, and SHACL.
 
-> To run the exercises you will need a Biovalidator server. See how to set it up [**here**](https://github.com/M-casado/fega-metadata-schema#setup).
+The exercises are grouped by topic. You can follow the suggested path or go straight to a topic you need.
 
-You don't need to run Biovalidator with local schemas. Just run the instance from [M-casado's fork](https://github.com/M-casado/biovalidator). Something like the following:
+
+## Setup
+
+> [!IMPORTANT]
+> To run the exercises you will need a Biovalidator server. See how to set it up [**here**](https://github.com/EGA-archive/fega-metadata-schema/tree/main#setup).
+
+You do not need to give Biovalidator a local copy of the schemas. If you installed it globally, copy this command to start the server:
 ```bash
 node "$(npm root -g)/biovalidator/src/biovalidator.js"
-# or, if you are in the Biovalidator repository
+```
+
+If you are already inside the Biovalidator repository, use this command instead:
+
+```bash
 node src/biovalidator
 ```
 
@@ -15,27 +25,45 @@ node src/biovalidator
 
 - Biovalidator: [http://localhost:3020](http://localhost:3020)
 - JSON-LD Playground: <https://json-ld.org/playground/>
-- Real EGA v2 schema repository: <https://github.com/M-casado/fega-metadata-schema>
+- Real EGA v2 schema repository: <https://github.com/EGA-archive/fega-metadata-schema>
 
-An **entity** is the smallest unit represented independently, such as a _Cohort_. A **JSON Schema** describes which JSON values are allowed. A JSON-LD **context** gives JSON names shared meanings (mainly for machines to understand). A JSON-LD **frame** selects and arranges data from a graph.
+## Suggested routes
 
-The small schemas used in the exercises are simplified versions of the real schemas. Remember that the EGA v2 model is still under development.
+1. [JSON Schema](exercises/json-schema/)
+2. [Biovalidator](exercises/biovalidator/)
+3. [Graph validation](exercises/graph-validation/)
+4. [JSON-LD](exercises/json-ld/)
 
-## Exercises
+[SHACL](exercises/shacl/) and [open-source navigation](exercises/open-source/) are rather optional.
 
-| Exercise | Topic |
+If you are running tight on time, prioritise the core topics above. It is fine not to finish all exercises.
+
+Every exercise has a **solution** below its questions, followed by a short **concept summary**. _Don't be cheeky: try to do it yourself first._
+
+## Topic index
+
+| Topic | What it covers |
 | --- | --- |
-| [1](exercises/01-validate-a-minimal-entity.md) | Validate a minimal entity |
-| [2](exercises/02-break-and-repair-data.md) | Break and repair data |
-| [3](exercises/03-follow-a-ref.md) | Follow a `$ref` |
-| [4](exercises/04-test-identifiers.md) | Test identifiers |
-| [5](exercises/05-add-json-ld-meaning.md) | Add JSON-LD meaning |
-| [6](exercises/06-expand-json-ld.md) | Expand JSON-LD |
-| [7](exercises/07-frame-json-ld.md) | Frame JSON-LD |
-| [8](exercises/08-load-a-real-cohort-example.md) | Load a real Cohort example |
+| [JSON Schema](exercises/json-schema/) | Data types, required fields, reusable rules, identifiers, and versions |
+| [Biovalidator](exercises/biovalidator/) | The browser page, health check, validation API, saved work, and ontology terms |
+| [Graph validation](exercises/graph-validation/) | Checking graph items and complete bundles |
+| [JSON-LD](exercises/json-ld/) | Giving names shared meanings, expanding data, and showing linked data |
+| [SHACL](exercises/shacl/) | Optional RDF checks with SHACL rules |
+| [Open-source navigation](exercises/open-source/) | Finding and checking source material with an online language model |
 
-If you are running tight on time, prioritise Exercises 1-6. It is fine not to finish every exercise.
+## Concepts
 
-In each exercise you have the solution at the bottom, but don't be cheeky: try to do it yourself first.
+As you work through the exercises, keep these ideas in mind:
 
-Exercise 8 needs network access because Biovalidator fetches the current example and schema from GitHub.
+- An **entity** is one item, such as a _Cohort_ or _Biomaterial_.
+- A **JSON Schema** is a list of rules for allowed JSON data.
+- A JSON-LD **context** tells your computer what JSON names mean.
+- A JSON-LD **frame** picks and arranges data from a graph.
+- A **graph profile** adds extra rules for a complete bundle of entities.
+- A **URL** is a web address.
+- An **API** lets another program ask a service to do something.
+- A **cache** is saved work that can be reused.
+- An **ontology** is a shared list of concepts and links between them.
+- **RDF** is a way to write linked facts. **SHACL** is a set of rules for checking those facts.
+
+Please note that the [schema repository](https://github.com/EGA-archive/fega-metadata-schema) is under active development.
